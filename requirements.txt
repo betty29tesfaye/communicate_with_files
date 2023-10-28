@@ -1,8 +1,8 @@
 langchain
 faiss
-openai tiktoken
+openai 
 "unstructured[pdf]"
-pytesseract pypdf
+pytesseract 
 fastapi
 kaleido
 uvicorn
