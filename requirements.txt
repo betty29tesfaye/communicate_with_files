@@ -1,0 +1,8 @@
+langchain
+faiss-cpu unstructured
+openai tiktoken
+"unstructured[pdf]"
+pytesseract pypdf
+fastapi
+kaleido
+uvicorn
