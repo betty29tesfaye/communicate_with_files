@@ -1,7 +1,6 @@
 langchain
 faiss
 openai 
-"unstructured[pdf]"
 pytesseract 
 fastapi
 kaleido
