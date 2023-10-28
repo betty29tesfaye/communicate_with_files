@@ -1,5 +1,5 @@
 langchain
-faiss-cpu unstructured
+faiss-cpu
 openai tiktoken
 "unstructured[pdf]"
 pytesseract pypdf
