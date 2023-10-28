@@ -5,3 +5,5 @@ fastapi
 kaleido
 uvicorn
 unstructured
+unstructured[pdf]
+
