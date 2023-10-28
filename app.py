@@ -28,7 +28,20 @@ os.environ['OPENAI_API_KEY']= "sk-HnkHswLQeFMo3NDylydlT3BlbkFJRWqUkY6Ls29qUMsSLT
 #"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" #previous key
 embeddings = OpenAIEmbeddings()
 
+def create_vector_index(text_chunks):
+   return FAISS.from_texts(text_chunks, embeddings)
+     
+chain = load_qa_chain(OpenAI(),chain_type = "map_rerank",return_intermediate_steps=True)
 
+def speak_with_file(file_path,query):
+  file_content = get_file_content(file_path)
+  file_splitter = text_splitter.split_text(file_content)
+  doc_search = create_vector_index(file_splitter)
+  documents = doc_search.similarity_search(query)
+  results = chain({"input_documents":documents,"question":query},return_only_outputs=True)
+  results = results['intermediate_steps'][0]
+  return results
+     
 uploaded_file = st.file_uploader('Upload a file')
 if uploaded_file is not None:
    save_uploadedfile(uploaded_file )
