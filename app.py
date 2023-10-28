@@ -1,5 +1,6 @@
 import streamlit as st
-import Helper
+import Helper.py
+#Helper.py
 uploaded_file = st.file_uploader('Upload a file')
 if uploaded_file is not None:
    save_uploadedfile(uploaded_file )
