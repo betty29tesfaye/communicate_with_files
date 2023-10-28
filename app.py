@@ -5,7 +5,6 @@ import streamlit as st
 from langchain.document_loaders.image import UnstructuredImageLoader
 from langchain.document_loaders import UnstructuredFileLoader
 from langchain.text_splitter import CharacterTextSplitter
-import tiktoken
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.llms import OpenAI
