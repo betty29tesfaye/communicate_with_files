@@ -53,7 +53,7 @@ def speak_with_file(file_path,query):
 uploaded_file = st.file_uploader('Upload a file')
 if uploaded_file is not None:
    save_uploadedfile(uploaded_file )
-   raw_pdf_document_content = helper1.get_file_content(str(uploaded_file.name))
+   raw_pdf_document_content = get_file_content(str(uploaded_file.name))
    pdf_document_chunks = text_splitter.split_text(raw_pdf_document_content)
    doc_search_paper = create_vector_index(pdf_document_chunks)
    print(doc_search_paper)
