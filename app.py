@@ -1,5 +1,5 @@
 import streamlit as st
-from '/mount/src/communicate_with_files/helper.py' import helper as helper1
+from 'communicate_with_files' import helper as helper1
 #Helper.py
 uploaded_file = st.file_uploader('Upload a file')
 if uploaded_file is not None:
