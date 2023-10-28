@@ -1,5 +1,4 @@
 langchain
-faiss
 openai 
 pytesseract 
 fastapi
