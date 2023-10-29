@@ -32,7 +32,7 @@ text_splitter = CharacterTextSplitter(
     chunk_overlap  = 200,
     length_function = len,
 )
-os.environ['OPENAI_API_KEY']= "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"
+# os.environ['OPENAI_API_KEY']= "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"
 #"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"
 #"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" #previous key
 embeddings = OpenAIEmbeddings()
