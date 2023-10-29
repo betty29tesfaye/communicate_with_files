@@ -7,3 +7,4 @@ uvicorn
 unstructured
 unstructured[pdf]
 tiktoken
+faiss-cpu
