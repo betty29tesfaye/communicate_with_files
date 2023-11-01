@@ -9,7 +9,7 @@ import os
 from langchain.vectorstores import FAISS
 from langchain.llms import OpenAI
 from langchain.chains.question_answering import load_qa_chain
-import streamlit as st
+
 
 def save_uploadedfile(uploadedfile):
      with open(uploadedfile.name,"wb") as f:
