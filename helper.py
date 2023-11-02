@@ -15,11 +15,24 @@ def save_uploadedfile(uploadedfile):
      with open(uploadedfile.name,"wb") as f:
          f.write(uploadedfile.getbuffer())
      return st.success("Saved")
-  
+
+def get_file_type(file_path):
+     file_type = ""
+  image_type = ["png","jpg","jpeg","gif"]
+  guess_file_type = guess(file_path)
+  if(guess_file_type.extension.lower() == "pdf"):
+    file_type = "pdf"
+  elif(guess_file_type.extension.lower() in image_type):
+     file_type = "image"
+  else:
+    file_type = "Unkown"
+  return file_type
+
 def get_file_content(file_path):
-  if("pdf" in file_path):
+     file_type = get_file_type(file_path)
+  if(file_type == "pdf"):
    loader=UnstructuredFileLoader(file_path)
-  elif("png" in file_path):
+  elif(file_type == "image"):
    loader = UnstructuredImageLoader(file_path)
   else:
     return null
