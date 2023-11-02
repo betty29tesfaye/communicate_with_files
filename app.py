@@ -79,8 +79,19 @@ def add_background_image(image_file):
     """,
     unsafe_allow_html=True
     )
-add_background_image('aipic.png')   
+add_background_image('bgi.png')   
 
+
+st.markdown(
+    """
+    <span class='st-emotion-cache-9ycgxx e1b2p2ww12'>
+        {
+            content: "Drag and drop your file to start chatting";
+        }
+    </span>
+    """, unsafe_allow_html=True)
+# st.markdown("The next word is <span style='color:red'>red</span>",
+#              unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader('Upload a file')
 if uploaded_file is not None:
