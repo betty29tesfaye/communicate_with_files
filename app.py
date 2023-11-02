@@ -1,8 +1,18 @@
-from communicate_with_files.helper import save_uploadedfile
+#from communicate_with_files.helper import save_uploadedfile
+from mount.src.communicate_with_files.helper import save_uploadedfile
+
+from PIL import Image
+
+image = Image.open(' mount/src/communicate_with_files/nlp.png')
+
+st.image(image, caption='')
+
 
 # os.environ['OPENAI_API_KEY']= "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"
 #"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"
 #"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" #previous key
+#nlp.png
+
 
 uploaded_file = st.file_uploader('Upload a file')
 if uploaded_file is not None:
