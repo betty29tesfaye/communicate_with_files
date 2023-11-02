@@ -3,7 +3,7 @@
 
 from PIL import Image
 
-image = Image.open('mount/src/communicate_with_files/nlp.png')
+image = Image.open('nlp.png')
 
 st.image(image, caption='')
 
