@@ -1,4 +1,4 @@
-import communicate_with_files.helper.py
+import communicate_with_files.helper
 
 # os.environ['OPENAI_API_KEY']= "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"
 #"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"
