@@ -1,5 +1,3 @@
-#from communicate_with_files.helper import save_uploadedfile
-from helper import save_uploadedfile
 import streamlit as st
 from PIL import Image
 
