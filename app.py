@@ -29,7 +29,7 @@ def get_file_type(file_path):
      file_type = "image"
    else:
      file_type = "Unkown"
-  return file_type
+   return file_type
 
 def get_file_content(file_path):
    file_type = get_file_type(file_path)
