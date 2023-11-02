@@ -23,22 +23,22 @@ def get_file_type(file_path):
    file_type = ""
    image_type = ["png","jpg","jpeg","gif"]
    guess_file_type = guess(file_path)
-  if(guess_file_type.extension.lower() == "pdf"):
-    file_type = "pdf"
-  elif(guess_file_type.extension.lower() in image_type):
+   if(guess_file_type.extension.lower() == "pdf"):
+     file_type = "pdf"
+   elif(guess_file_type.extension.lower() in image_type):
      file_type = "image"
-  else:
-    file_type = "Unkown"
+   else:
+     file_type = "Unkown"
   return file_type
 
 def get_file_content(file_path):
    file_type = get_file_type(file_path)
    if(file_type == "pdf"):
-   loader=UnstructuredFileLoader(file_path)
+     loader=UnstructuredFileLoader(file_path)
    elif(file_type == "image"):
-   loader = UnstructuredImageLoader(file_path)
+     loader = UnstructuredImageLoader(file_path)
    else:
-    return null
+      return null
    document = loader.load()
    document_content = '\n'.join(doc.page_content for doc in document)
    return document_content
@@ -92,7 +92,7 @@ if uploaded_file is not None:
    print(doc_search_paper)
    question_from_user = st.text_input("I am your file, please enter your question, I can answer")
    if question_from_user is not None:
-    results = speak_with_file(str(uploaded_file.name),question_from_user)
-    answer = results["answer"]
-    confidence_score = results["score"]
-    st.write(f"{answer} \n {confidence_score}")
+     results = speak_with_file(str(uploaded_file.name),question_from_user)
+     answer = results["answer"]
+     confidence_score = results["score"]
+     st.write(f"{answer} \n {confidence_score}")
