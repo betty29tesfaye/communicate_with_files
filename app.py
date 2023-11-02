@@ -17,8 +17,8 @@ from PIL import Image
 def save_uploadedfile(uploadedfile):
      with open(uploadedfile.name,"wb") as f:
          f.write(uploadedfile.getbuffer())
-     return st.success("Saved")
-
+     return null
+     
 def get_file_type(file_path):
    file_type = ""
    image_type = ["png","jpg","jpeg","gif"]
@@ -81,16 +81,6 @@ def add_background_image(image_file):
     )
 add_background_image('bgi.png')   
 
-
-st.markdown(
-    """
-    <span class='st-emotion-cache-9ycgxx e1b2p2ww12'>
-        {
-            content: "Drag and drop your file to start chatting";
-        }
-    </span>
-    """, unsafe_allow_html=True)
-
 uploaded_file = st.file_uploader('Upload a file')
 if uploaded_file is not None:
    save_uploadedfile(uploaded_file )
@@ -99,7 +89,7 @@ if uploaded_file is not None:
    doc_search_paper = create_vector_index(pdf_document_chunks)
    print(doc_search_paper)
    question_from_user = st.text_input("Please enter your question:")
-   while question_from_user is not None:
+   if question_from_user is not None:
      results = speak_with_file(str(uploaded_file.name),question_from_user)
      answer = results["answer"]
      confidence_score = results["score"]
