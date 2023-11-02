@@ -5,7 +5,7 @@ from PIL import Image
 
 image = Image.open('nlp.png')
 
-st.image(image, caption='')
+st.image(image, caption='NLP')
 
 
 # os.environ['OPENAI_API_KEY']= "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"
