@@ -65,20 +65,21 @@ def speak_with_file(file_path,query):
   return results
   
 
-def add_background_image():
-   st.markdown(
-         f"""
-         <style>
-         .stApp {{
-             background-image: url("https://images.idgesg.net/images/idge/imported/imageapi/2022/06/15/15/artificial_intelligence_ai_brain_digital-100745931-large-100929115-large.jpg?auto=webp&quality=85,70");
-             background-attachment: fixed;
-             background-size: cover
-         }}
-         </style>
-         """,
-         unsafe_allow_html=True
-     )
-add_background_image()   
+def add_background_image(image_file):
+  with open(image_file, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read())
+    st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
+        background-size: cover
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
+add_background_image('aipic.png')   
 
 
 uploaded_file = st.file_uploader('Upload a file')
