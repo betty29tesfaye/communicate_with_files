@@ -99,8 +99,9 @@ if uploaded_file is not None:
    doc_search_paper = create_vector_index(pdf_document_chunks)
    print(doc_search_paper)
    question_from_user = st.text_input("I am your file, please enter your question, I can answer")
-   if question_from_user is not None:
+   while question_from_user is not None:
      results = speak_with_file(str(uploaded_file.name),question_from_user)
      answer = results["answer"]
      confidence_score = results["score"]
      st.write(f"{answer} \n {confidence_score}")
+     question_from_user = st.text_input("Please let me know if you have any other question")
