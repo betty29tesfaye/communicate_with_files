@@ -17,7 +17,7 @@ from PIL import Image
 def save_uploadedfile(uploadedfile):
      with open(uploadedfile.name,"wb") as f:
          f.write(uploadedfile.getbuffer())
-     return null
+     return Null
      
 def get_file_type(file_path):
    file_type = ""
