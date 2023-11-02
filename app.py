@@ -68,8 +68,8 @@ def speak_with_file(file_path,query):
 
 def add_background_image(image_file):
   with open(image_file, "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read())
-    st.markdown(
+     encoded_string = base64.b64encode(image_file.read())
+  st.markdown(
     f"""
     <style>
     .stApp {{
