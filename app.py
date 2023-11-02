@@ -1,6 +1,6 @@
 #from communicate_with_files.helper import save_uploadedfile
-#from mount.src.communicate_with_files.helper import save_uploadedfile
-
+from helper import save_uploadedfile
+import streamlit as st
 from PIL import Image
 
 image = Image.open('nlp.png')
