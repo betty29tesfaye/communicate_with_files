@@ -90,8 +90,6 @@ st.markdown(
         }
     </span>
     """, unsafe_allow_html=True)
-# st.markdown("The next word is <span style='color:red'>red</span>",
-#              unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader('Upload a file')
 if uploaded_file is not None:
