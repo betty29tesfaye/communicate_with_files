@@ -49,8 +49,7 @@ text_splitter = CharacterTextSplitter(
     chunk_overlap  = 200,
     length_function = len,
 )
-os.environ['OPENAI_API_KEY']= "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"
-#"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" #previous key
+
 embeddings = OpenAIEmbeddings()
 
 def create_vector_index(text_chunks):
