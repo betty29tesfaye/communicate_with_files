@@ -96,6 +96,6 @@ if uploaded_file is not None:
       st.write(f"{answer}")
       #st.write(f"{answer} \n {confidence_score}")
       if st.button('Regenerate the answer'):
-      st.write('Why hello there')
-      results = speak_with_file(str(uploaded_file.name),question_from_user)
-      answer = results["answer"]
+         results = speak_with_file(str(uploaded_file.name),question_from_user)
+         answer = results["answer"]
+         st.write(f"{answer}")
