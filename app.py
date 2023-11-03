@@ -80,7 +80,7 @@ def add_background_image(image_file):
     unsafe_allow_html=True
     )
 add_background_image('bgi.png')   
-st.header('AI App For Chatting With Files')
+st.header(':white[AI App For Chatting With Files]')
 uploaded_file = st.file_uploader(' ')
 if uploaded_file is not None:
    temporarly_save_uploaded_file(uploaded_file)
@@ -95,4 +95,7 @@ if uploaded_file is not None:
       confidence_score = results["score"]
       st.write(f"{answer}")
       #st.write(f"{answer} \n {confidence_score}")
-    
+      if st.button('Regenerate the answer'):
+      st.write('Why hello there')
+      results = speak_with_file(str(uploaded_file.name),question_from_user)
+      answer = results["answer"]
