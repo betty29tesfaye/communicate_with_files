@@ -80,18 +80,19 @@ def add_background_image(image_file):
     unsafe_allow_html=True
     )
 add_background_image('bgi.png')   
-
-uploaded_file = st.file_uploader('Upload a file')
+st.header('AI App For Chatting With Files')
+uploaded_file = st.file_uploader(' ')
 if uploaded_file is not None:
    temporarly_save_uploaded_file(uploaded_file)
    raw_pdf_document_content = get_file_content(str(uploaded_file.name))
    pdf_document_chunks = text_splitter.split_text(raw_pdf_document_content)
    doc_search_paper = create_vector_index(pdf_document_chunks)
-   print(doc_search_paper)
-   question_from_user = st.text_input("Please enter your question:")
+   # print(doc_search_paper)
+   question_from_user = st.text_input("Hi there,Please enter your question:")
    if question_from_user:
       results = speak_with_file(str(uploaded_file.name),question_from_user)
       answer = results["answer"]
       confidence_score = results["score"]
-      st.write(f"{answer} \n {confidence_score}")
+      st.write(f"{answer}")
+      #st.write(f"{answer} \n {confidence_score}")
     
