@@ -80,7 +80,7 @@ def add_background_image(image_file):
     unsafe_allow_html=True
     )
 add_background_image('bgi.png')   
-st.markdown(f'<header style="color:#00008b;font-size:24px;">AI App For Chatting With Files</header>', unsafe_allow_html=True)
+st.markdown(f'<span style="background-color:#191970;color:white;font-size:24px;">AI App For Chatting With Files</span>', unsafe_allow_html=True)
 uploaded_file = st.file_uploader(' ')
 if uploaded_file is not None:
    temporarly_save_uploaded_file(uploaded_file)
