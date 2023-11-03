@@ -14,10 +14,10 @@ import base64
 import streamlit as st
 from PIL import Image
 
-def save_uploadedfile(uploadedfile):
+def temporarly_save_uploaded_file(uploadedfile):
      with open(uploadedfile.name,"wb") as f:
          f.write(uploadedfile.getbuffer())
-     return Null
+     
      
 def get_file_type(file_path):
    file_type = ""
@@ -83,7 +83,7 @@ add_background_image('bgi.png')
 
 uploaded_file = st.file_uploader('Upload a file')
 if uploaded_file is not None:
-   save_uploadedfile(uploaded_file )
+   temporarly_save_uploaded_file(uploaded_file)
    raw_pdf_document_content = get_file_content(str(uploaded_file.name))
    pdf_document_chunks = text_splitter.split_text(raw_pdf_document_content)
    doc_search_paper = create_vector_index(pdf_document_chunks)
