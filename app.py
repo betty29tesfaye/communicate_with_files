@@ -89,7 +89,7 @@ if uploaded_file is not None:
    pdf_document_chunks = text_splitter.split_text(raw_pdf_document_content)
    doc_search_paper = create_vector_index(pdf_document_chunks)
    # print(doc_search_paper)
-   question_from_user = st.chat_input("Hi there,Please enter your question:")
+   question_from_user = st.chat_input("Hi there, Please enter your question. I will answer based on the content of your file.")
    if question_from_user:
       results = speak_with_file(str(uploaded_file.name),question_from_user)
       answer = results["answer"]
