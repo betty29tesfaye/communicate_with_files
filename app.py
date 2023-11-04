@@ -91,7 +91,7 @@ if uploaded_file is not None:
    # print(doc_search_paper)
    question_from_user = st.chat_input("Hi there, Please enter your question. I will answer based on the content of your file.")
    if question_from_user:
-      st.write({question_from_user})
+      st.write(question_from_user)
       results = speak_with_file(str(uploaded_file.name),question_from_user)
       answer = results["answer"]
       confidence_score = results["score"]
