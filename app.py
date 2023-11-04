@@ -91,12 +91,12 @@ if uploaded_file is not None:
    # print(doc_search_paper)
    question_from_user = st.chat_input("Hi there, Please enter your question. I will answer based on the content of your file.")
    if question_from_user:
-      st.write(f"My question: {question_from_user}")
+      st.write({question_from_user})
       results = speak_with_file(str(uploaded_file.name),question_from_user)
       answer = results["answer"]
       confidence_score = results["score"]
       if "This document does not answer the question" in answer:
-          st.markdown(f'<p style="background-color:#b3cee5;color:#414C6B;">It seems like the document lacks information regarding your question. If there is a particular detail or if there is been a typo, please provide additional context or clarification. I'm here to assist you.</p>', unsafe_allow_html=True) 
+          st.markdown(f'<p style="background-color:#b3cee5;color:#414C6B;">It seems like the document lacks information regarding your question. If there is a particular detail or if there is been a typo, please provide additional context or clarification. I am here to assist you.</p>', unsafe_allow_html=True) 
       else:
           st.markdown(f'<p style="background-color:#b3cee5;color:#414C6B;">{answer}</p>', unsafe_allow_html=True) 
 
