@@ -103,5 +103,5 @@ if uploaded_file is not None:
       #    results = speak_with_file(str(uploaded_file.name),question_from_user)
       #    answer = results["answer"]
         
-         st.write(f"{answer}")
+   
          #This document does not answer the question
