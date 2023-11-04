@@ -94,7 +94,7 @@ if uploaded_file is not None:
       results = speak_with_file(str(uploaded_file.name),question_from_user)
       answer = results["answer"]
       confidence_score = results["score"]
-      if answer == "This document does not answer the question":
+      if "This document does not answer the question" in answer:
           st.write("It seems like the document doesn't have any information about your question.If it's something specific or a typo, could you please provide more context or clarify? I'm here to help")
       else:
           st.write(f"{answer}")
