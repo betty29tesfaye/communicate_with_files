@@ -96,12 +96,13 @@ if uploaded_file is not None:
       answer = results["answer"]
       confidence_score = results["score"]
       if "This document does not answer the question" in answer:
-          st.write("File Chatting App: It seems like the document doesn't have any information about your question.If it's something specific or a typo, could you please provide more context or clarify? I'm here to help")
+          st.markdown(f'<p style="background-color:#ADD8E6;color:#414C6B;font-family:book-antiqua;">It seems like the document lacks information regarding your question. If there's a particular detail or if there's been a typo, could you kindly offer additional context or clarification? I'm here to assist you.</p>', unsafe_allow_html=True)
       else:
-          st.write(f"File Chatting App: {answer}")
+          st.markdown(f'<p style="background-color:#ADD8E6;color:#414C6B;font-family:book-antiqua;">{answer}</p>', unsafe_allow_html=True)
+
       # st.write(f"{answer} \n {confidence_score}")
       # if st.button('Regenerate the answer'):
-      #    results = speak_with_file(str(uploaded_file.name),question_from_user)
+
       #    answer = results["answer"]
         
    
