@@ -94,9 +94,14 @@ if uploaded_file is not None:
       results = speak_with_file(str(uploaded_file.name),question_from_user)
       answer = results["answer"]
       confidence_score = results["score"]
-      st.write(f"{answer}")
-      #st.write(f"{answer} \n {confidence_score}")
-      if st.button('Regenerate the answer'):
-         results = speak_with_file(str(uploaded_file.name),question_from_user)
-         answer = results["answer"]
+      if answer == "This document does not answer the question":
+          st.write("It seems like the document doesn't have any information about your question.If it's something specific or a typo, could you please provide more context or clarify? I'm here to help")
+      else:
+          st.write(f"{answer}")
+      # st.write(f"{answer} \n {confidence_score}")
+      # if st.button('Regenerate the answer'):
+      #    results = speak_with_file(str(uploaded_file.name),question_from_user)
+      #    answer = results["answer"]
+        
          st.write(f"{answer}")
+         #This document does not answer the question
