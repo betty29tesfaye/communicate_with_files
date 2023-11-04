@@ -96,9 +96,9 @@ if uploaded_file is not None:
       answer = results["answer"]
       confidence_score = results["score"]
       if "This document does not answer the question" in answer:
-          st.markdown(f'<p style="background-color:#ADD8E6;color:#414C6B;font-family:book-antiqua;">It seems like the document lacks information regarding your question. If there's a particular detail or if there's been a typo, could you kindly offer additional context or clarification? I'm here to assist you.</p>', unsafe_allow_html=True)
+          st.markdown(f'<p style="background-color:#b3cee5;color:#414C6B;">It seems like the document lacks information regarding your question. If there's a particular detail or if there's been a typo, please kindly offer additional context or clarification. I'm here to assist you.</p>', unsafe_allow_html=True) 
       else:
-          st.markdown(f'<p style="background-color:#ADD8E6;color:#414C6B;font-family:book-antiqua;">{answer}</p>', unsafe_allow_html=True)
+          st.markdown(f'<p style="background-color:#b3cee5;color:#414C6B;">{answer}</p>', unsafe_allow_html=True) 
 
       # st.write(f"{answer} \n {confidence_score}")
       # if st.button('Regenerate the answer'):
@@ -106,4 +106,4 @@ if uploaded_file is not None:
       #    answer = results["answer"]
         
    
-         #This document does not answer the question
+         #This document does not answer the questi
