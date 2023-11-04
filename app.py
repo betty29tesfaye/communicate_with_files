@@ -91,14 +91,14 @@ if uploaded_file is not None:
    # print(doc_search_paper)
    question_from_user = st.chat_input("Hi there, Please enter your question. I will answer based on the content of your file.")
    if question_from_user:
-      st.write(f"{question_from_user}")
+      st.write(f"My question: {question_from_user}")
       results = speak_with_file(str(uploaded_file.name),question_from_user)
       answer = results["answer"]
       confidence_score = results["score"]
       if "This document does not answer the question" in answer:
-          st.write("It seems like the document doesn't have any information about your question.If it's something specific or a typo, could you please provide more context or clarify? I'm here to help")
+          st.write("File Chatting App: It seems like the document doesn't have any information about your question.If it's something specific or a typo, could you please provide more context or clarify? I'm here to help")
       else:
-          st.write(f"{answer}")
+          st.write(f"File Chatting App: {answer}")
       # st.write(f"{answer} \n {confidence_score}")
       # if st.button('Regenerate the answer'):
       #    results = speak_with_file(str(uploaded_file.name),question_from_user)
