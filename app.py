@@ -96,7 +96,8 @@ if uploaded_file is not None:
       answer = results["answer"]
       confidence_score = results["score"]
       if "This document does not answer the question" in answer:
-          st.markdown(f'<p style="background-color:#b3cee5;color:#414C6B;">It seems like I don't have any data regarding your question. If there is a particular detail or if there is been a typo, please provide additional context or clarification. I am here to assist you.</p>', unsafe_allow_html=True) 
+          message1 = "It seems like I don't have any data regarding your question. If there is a particular detail or if there is been a typo, please provide additional context or clarification. I am here to assist you."
+          st.markdown(f'<p style="background-color:#b3cee5;color:#414C6B;">{message1}</p>', unsafe_allow_html=True) 
       else:
           st.markdown(f'<p style="background-color:#b3cee5;color:#414C6B;">{answer}</p>', unsafe_allow_html=True) 
 
