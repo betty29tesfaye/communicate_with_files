@@ -51,6 +51,7 @@ text_splitter = CharacterTextSplitter(
     length_function = len,
 )
 
+openai.api_key = os.environ['OPENAI_API_KEY']
 embeddings = OpenAIEmbeddings()
 
 def create_vector_index(text_chunks):
