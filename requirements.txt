@@ -1,5 +1,5 @@
 langchain
-openai==1.1.1 
+openai==0.26.5 
 pytesseract 
 fastapi
 kaleido
