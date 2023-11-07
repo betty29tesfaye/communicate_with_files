@@ -52,7 +52,7 @@ text_splitter = CharacterTextSplitter(
 )
 
 
-os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 embeddings = OpenAIEmbeddings()
 
 def create_vector_index(text_chunks):
