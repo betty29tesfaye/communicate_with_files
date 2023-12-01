@@ -59,6 +59,7 @@ def create_vector_index(text_chunks):
    return FAISS.from_texts(text_chunks, embeddings)
 chain = load_qa_chain(OpenAI(),chain_type = "map_rerank",return_intermediate_steps=True)
 def speak_with_file(file_path,query):
+  st.write("I am going through your file.")
   file_content = get_file_content(file_path)
   file_splitter = text_splitter.split_text(file_content)
   doc_search = create_vector_index(file_splitter)
