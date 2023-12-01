@@ -96,7 +96,7 @@ if uploaded_file is not None:
       st.write(question_from_user)
       results = speak_with_file(str(uploaded_file.name),question_from_user)
       with st.spinner('I am going through your file.'):
-      time.sleep(5)
+          time.sleep(5)
       answer = results["answer"]
       confidence_score = results["score"]
       if "This document does not answer the question" in answer:
